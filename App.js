@@ -5,7 +5,7 @@ import Quote from './components/Quote'
 
 const Container = styled.View`
 	flex: 1;
-	background-color: papayawhip;
+	background-color: black;
 	justify-content: center;
 	align-items: center;
 `;

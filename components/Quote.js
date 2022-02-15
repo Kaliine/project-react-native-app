@@ -1,6 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components/native'
-import { View, Text, Button, ActivityIndicator } from 'react-native'
+import { View, Text, Button, ActivityIndicator, TouchableOpacity } from 'react-native'
+
+const QuoteText = styled.Text`
+	font-weight: 700;
+  color: white;
+`
+const StyledText = styled.Text`
+  color: white;
+`
+
+const StyledButton = styled.TouchableOpacity`
+	width: 50%;
+  color: white;
+	background-color: grey;
+`
 
 
 const Quote = () => {
@@ -25,10 +39,12 @@ const Quote = () => {
 
   return (
     <View>
-      <Text>Press to see today's quote!</Text>
-      <Button title='Click' onPress={generateQuote} />
-      <Text>Quote: {quote.content}</Text>
-      <Text>Quote: {quote.author}</Text>
+      <StyledText>Press to see today's quote!</StyledText>
+      <StyledButton onPress={generateQuote}>
+        <Text>Get Quote</Text>
+      </StyledButton>
+      <QuoteText>Quote: {quote.content}</QuoteText>
+      <StyledText>Quote: {quote.author}</StyledText>
     </View>
   )
 }
