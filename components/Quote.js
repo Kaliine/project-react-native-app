@@ -2,18 +2,33 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components/native'
 import { View, Text, Button, ActivityIndicator, TouchableOpacity } from 'react-native'
 
+const ViewWrapper = styled.View`
+  display: flex;
+  align-items: center;
+  max-width: 260px;
+`
+
 const QuoteText = styled.Text`
 	font-weight: 700;
   color: white;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 30px;
 `
 const StyledText = styled.Text`
   color: white;
+  font-size: 20px;
 `
 
 const StyledButton = styled.TouchableOpacity`
 	width: 50%;
-  color: white;
 	background-color: grey;
+  border-radius: 20px;
+  height: 50px;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  margin-top: 5px;
 `
 
 
@@ -38,14 +53,14 @@ const Quote = () => {
   }
 
   return (
-    <View>
-      <StyledText>Press to see today's quote!</StyledText>
+    <ViewWrapper>
+      <StyledText>Today's quote!</StyledText>
       <StyledButton onPress={generateQuote}>
-        <Text>Get Quote</Text>
+        <Text>Press</Text>
       </StyledButton>
-      <QuoteText>Quote: {quote.content}</QuoteText>
-      <StyledText>Quote: {quote.author}</StyledText>
-    </View>
+      <QuoteText>"{quote.content}"</QuoteText>
+      <StyledText>Author: {quote.author}</StyledText>
+    </ViewWrapper>
   )
 }
 
